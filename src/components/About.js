@@ -1,24 +1,15 @@
-import React from "react";
-import blogData from "../data/blog";
-import About from "./About";
-import ArticleList from "./ArticleList";
-import Header from "./Header";
+import React from 'react';
 
-console.log(blogData);
-
-function App() {
-  const {name, image, about, posts} = blogData;
-
-  return (
-    <div className="App">
-      <Header name={name}/>
-      <About image={image} about={about}/>
-      <ArticleList posts={posts} />
-    </div>
-  );
+function About({ about, image = "https://via.placeholder.com/215" }) {
+    return (
+        <aside>
+            <img src={image} alt="blog logo" title="Bingo Bango Bongo"></img>
+            <p>{about}</p>
+        </aside>
+    );
 }
 
-export default App;
+export default About;
 
 /**
 const blogData = {

@@ -1,24 +1,19 @@
-import React from "react";
-import blogData from "../data/blog";
-import About from "./About";
-import ArticleList from "./ArticleList";
-import Header from "./Header";
+import React from 'react';
+import Article from './Article';
 
-console.log(blogData);
-
-function App() {
-  const {name, image, about, posts} = blogData;
-
-  return (
-    <div className="App">
-      <Header name={name}/>
-      <About image={image} about={about}/>
-      <ArticleList posts={posts} />
-    </div>
-  );
+function ArticleList({posts}) {
+    return (
+        <main>
+            {posts.map(post => {
+                return (
+                    <Article key={post.id} title={post.title} date={post.date} preview={post.preview} minutes={post.minutes}/>
+                )
+            })}
+        </main>
+    );
 }
 
-export default App;
+export default ArticleList;
 
 /**
 const blogData = {
